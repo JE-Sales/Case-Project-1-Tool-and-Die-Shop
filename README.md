@@ -1,6 +1,5 @@
-Case Project #1-Tool and Die Shop
-
-CSP109-Software Engineering 1
+**CSP109-Software Engineering 1
+Case Project #1-Tool and Die Shop**
 
 GROUP 1:
 
