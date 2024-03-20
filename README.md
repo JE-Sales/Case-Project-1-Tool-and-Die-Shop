@@ -1,8 +1,14 @@
 Case Project #1-Tool and Die Shop
+
+CSP109-Software Engineering 1
+
 GROUP 1:
+
 Members:
   Asan, Jayvee L.
+  
   De Jesus, Michael Ivan A.
+  
   Sales, John Emmanuel M.
   
 PLEASE CLICK THE LINK TO SEE THE LIVE LINK:
