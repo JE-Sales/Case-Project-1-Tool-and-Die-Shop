@@ -56,6 +56,9 @@ let selectedJobIndex = -1;
 //Delete Job Dropdown
 const deleteMaterialsForJobTableBody = document.getElementById("deleteMaterialsForJobTableBody");
 const deleteOngoingJobSelect = document.getElementById("deleteOngoing-Jobs");
+
+//Delete
+let selectedJobForDelete;
 //Delete Button
 const jobDeleteButton = document.getElementById("jobDeleteButton");
 
@@ -665,17 +668,12 @@ function storeUpdateJob(selectedJob) {
 
 
 //Function for Deleting Job MAJOR FUNCTION!!!
-function removeJob(index) {
+function removeJob(index) { 
+    let existingJobs = JSON.parse(localStorage.getItem("jobDetails")) || [];
+    existingJobs[index].jobNumber = -1;
 
-    // Retrieve the array
-    letmyArray = JSON.parse(localStorage.getItem("jobDetails"));
-    console.log(letmyArray);
+    localStorage.setItem("jobDetails", JSON.stringify(existingJobs));
 
-    // Remove element by value (filter)
-    letmyArray[index].jobNumber = -1;// Removes 1 element at index
-
-    // Store the modified array back in local storage
-    localStorage.setItem("jobDetails", JSON.stringify(letmyArray));
 }
 
 //Buttons Actions
@@ -758,13 +756,12 @@ removeJobButton.addEventListener("click", function () {
 deleteOngoingJobSelect.addEventListener("change", function () {
     const selectedJob = this.value;
     deleteJobDetailsText(selectedJob);
-    selectedJobIndex = selectedJob;
+    selectedJobForDelete = selectedJob;
 
 });
 
 jobDeleteButton.addEventListener("click", function () {
-    removeJob(selectedJobIndex);
+    removeJob(selectedJobForDelete);
     alert("Job Deleted!");
 });
-
 
