@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Tool 'N Die Shop</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='management.css'>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="side-panel-container" class="leftcolumn">
+      <form>
+        <h3>TOOL 'N DIE SHOP</h3>
+        <h1>Sign In</h1>
+        <button type="button" id="createJobButton" class="button button1" />Create Job</button>
+        <button type="button" id="viewJobsButton" class="button button1" />View Jobs</button>
+        <button type="button" id="updateJobsButton" class="button button1" />Update Jobs</button>
+        <button type="button" id="removeJobsButton" class="button button1" />Remove Jobs</button>
+        <button type="button" class="button button2" href="login.html" />Back</button>
+      </form>
+    </div>
+    <div class="main-panel-container">
+      <form id="createJobForm">
+        <h2>Create Job</h2>
+        <label for="jobNumber">Job Number: </label>
+        <span id="jobNumber"></span>
+        <br>
+        <br>
+        <label for="name">Name:</label>
+        <input type="text" placeholder="Name" id="name">
+        <label for="description">Description:</label>
+        <input type="text" placeholder="Description" id="description">
+        <label for="startDate">Start Date:</label>
+        <input type="date" class="form-control" id="startDate">
+        <label for="endDate">End Date:</label>
+        <input type="date" class="form-control" id="endDate">
+        <label for="startTime">Start Time:</label>
+        <input type="time" id="startTime" name="startTime">
+        <label for="endTime">End Time:</label>
+        <input type="time" id="endTime" name="endTime">
+        <h2>Materials</h2>
+        <div class="scrollable-table-wrapper">
+          <table id="materialsTable">
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAll"></th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody id="materialsTableBody"></tbody>
+          </table>
+        </div>
+        <br>
+        <br>
+        <button id="jobSaveButton" class="button3">Save Job</button>
+        <div id="jobList"></div>
+      </form>
+      <form id="viewJobForm">
+        <h2>View Job</h2>
+        <br>
+        <label for="ongoing-jobs">Ongoing Jobs:</label>
+        <select id="ongoing-jobs">
+          <option value="">-- Select Job --</option>
+        </select>
+        <br>
+        <br>
+        <label for="viewJobNumber">Job Number:</label>
+        <span id="viewJobNumber">--</span><br>
+
+        <label for="viewJobName">Name:</label>
+        <span id="viewJobName">--</span><br>
+
+        <label for="viewJobDesc">Description:</label>
+        <span id="viewJobDesc">--</span><br>
+
+        <label for="viewJobStartDate">Start Date:</label>
+        <span id="viewJobStartDate">--</span><br>
+
+        <label for="viewJobEndDate">End Date:</label>
+        <span id="viewJobEndDate">--</span><br>
+
+        <label for="viewJobStartTime">Start Time:</label>
+        <span id="viewJobStartTime">--</span><br>
+
+        <label for="viewJobEndTime">End Time:</label>
+        <span id="viewJobEndTime">--</span><br>
+
+        <label for="file">Job Progress:</label>
+        <progress class="progressBar" id="viewJobProgressBar" value="0" max="100"> 30% </progress>
+        <span id="viewJobProgress">--</span><br>
+        <h2>Materials</h2>
+        <div class="scrollable-table-wrapper">
+          <table id="materialsForJobTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody id="materialsForJobTableBody"></tbody>
+          </table>
+        </div>
+      </form>
+      <form id="editJobForm">
+        <form id="editForm" style="display: none;">
+          <h2>Edit Job Details</h2>
+          <br>
+          <label for="editOngoing-Jobs">Ongoing Jobs:</label>
+          <select id="editOngoing-Jobs">
+            <option value="">-- Select Job --</option>
+          </select>
+          <br>
+          <br>
+          <label for="editName">Job Name:</label>
+          <input type="text" id="editName" required><br>
+          <label for="editDescription">Description:</label>
+          <textarea id="editDescription" required></textarea><br>
+          <label for="editStartDate">Start Date:</label>
+          <input type="date" id="editStartDate" required><br>
+          <label for="editEndDate">End Date:</label>
+          <input type="date" id="editEndDate" required><br>
+          <label for="editStartTime">Start Time:</label>
+          <input type="time" id="editStartTime" required><br>
+          <label for="editEndTime">End Time:</label>
+          <input type="time" id="editEndTime" required><br>
+          <h2>Materials</h2>
+          <div class="scrollable-table-wrapper">
+            <table id="editMaterialsTable">
+              <thead>
+                <tr>
+                  <th><input type="checkbox" id="selectAll"></th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>ID</th>
+                </tr>
+              </thead>
+              <tbody id="editMaterialsTableBody"></tbody>
+            </table>
+          </div>
+          <br>
+          <br>
+          <button type="button" id="jobUpdateButton">Update Job</button>
+        </form>
+        <br>
+      </form>
+      <br>
+      <form id="deleteJobForm">
+        <h2>Delete Job</h2>
+        <br>
+        <label for="deleteOngoing-Jobs">Ongoing Jobs:</label>
+        <select id="deleteOngoing-Jobs">
+          <option value="">-- Select Job --</option>
+        </select>
+        <br>
+        <br>
+        <label for="deleteJobNumber">Job Number:</label>
+        <span id="deleteJobNumber">--</span><br>
+
+        <label for="deleteJobName">Name:</label>
+        <span id="deleteJobName">--</span><br>
+
+        <label for="deleteJobDesc">Description:</label>
+        <span id="deleteJobDesc">--</span><br>
+
+        <label for="deleteJobStartDate">Start Date:</label>
+        <span id="deleteJobStartDate">--</span><br>
+
+        <label for="deleteJobEndDate">End Date:</label>
+        <span id="deleteJobEndDate">--</span><br>
+
+        <label for="deleteJobStartTime">Start Time:</label>
+        <span id="deleteJobStartTime">--</span><br>
+
+        <label for="deleteJobEndTime">End Time:</label>
+        <span id="deleteJobEndTime">--</span><br>
+
+        <label for="deleteJobProgress">Job Progress:</label>
+        <progress class="viewJobProgressBar" id="file" value="0" max="100"> 30% </progress>
+        <div class="scrollable-table-wrapper">
+          <table id="deleteMaterialsForJobTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>ID</th>
+              </tr>
+            </thead>
+            <tbody id="deleteMaterialsForJobTableBody"></tbody>
+          </table>
+          <br>
+          <br>
+        </div>
+        <button id="jobDeleteButton">Delete Job</button>
+      </form>
+    </div>
+  </div>
+  <script src='management.js'></script>
+</body>
+
+</html>

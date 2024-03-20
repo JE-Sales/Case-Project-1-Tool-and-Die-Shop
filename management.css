@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.column {
+  width: 50%;
+}
+
+.leftcolumn, .rightcolumn {
+  border: 0px solid #ccc;
+  padding: 20px;
+}
+
+/* Side Panel Styles */
+.leftcolumn {
+  width: 350px; /* Set side panel width */
+  background-image: linear-gradient(to bottom right, black, #473D3C,#73695F, white); /* Set background color */
+  padding: 20px; /* Add padding */
+  border-right: 1px solid #968E86; /* Add border to separate panels */
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Main Panel Styles */
+.rightcolumn {
+  width: 50%;
+  flex: 1; /* Make main panel take up remaining space */
+  padding: 20px; /* Add padding */
+}
+
+/* Container Styles */
+.container {
+  display: flex; /* Make the container a flexbox */
+  width: 100vw; /* Set container width to 100% viewport width */
+  height: 100vh; /* Set container height to 100% viewport height */
+}
+
+.container {
+  display: flex; /* Make the container a flexbox */
+  width: 100vw; /* Set container width to 100% viewport width */
+  height: 100vh; /* Set container height to 100% viewport height */
+}
+
+.side-panel-container{
+  width: 200px; /* Set sidebar width */
+  background-image: linear-gradient(to bottom right, black, #473D3C,#73695F, white);
+  position: fixed; /* Fix the sidebar to the left */
+  top: 0; /* Start at the top */
+  left: 0; /* Position at the left edge */
+  height: 100vh; /* Set sidebar height to 100 viewport height */
+  overflow-y: auto; /*Allow scrolling within the sidebar if content overflows */
+  clear: both;
+  padding: 2px;
+}
+
+.viewJobProgressBar{
+  padding: 2%;
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
+
+.main-panel-container{
+  flex: 1; /* Take up remaining space */
+  background-color: #fff; /* Main content background color */
+  padding: 20px; /* Add some padding */
+  margin-left: 200px; /* Adjust the value to match your sidebar width */
+}
+input{
+  padding: 15;
+  width: 35%;
+  margin: 10px;
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
+
+h1{
+  color: white;
+}
+
+h3{
+  color: white;
+}
+
+#jobSaveButton,
+#jobViewButton,
+#jobUpdateButton,
+#jobDeleteButton {
+  background-image: linear-gradient(to bottom right, #473D3C,#73695F, white);
+  color: white;
+  padding: 10px;
+  width: 15%;
+  margin: 4px;
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
+
+button.button1 { 
+  background-image: linear-gradient(to bottom right, #473D3C,#73695F, white);/* Button 1 specific styles here */ 
+  color: white;
+  padding: 20px; /* Add padding */
+}
+
+button.button2 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3d4043;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button 3 Hover Styles */
+button.button2:hover {
+  background-color: #2d2f30;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
+
+form button {
+  margin-bottom: 10px; /* Add spacing between buttons */
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
+
+label{
+  margin-bottom: 2px;
+}
+
+/* Other styles can be added here for specific elements */
+
+table {
+  border-collapse: collapse; /* Remove borders between cells */
+  width: 100%; /* Adjust width as needed */
+  margin: 5px;
+}
+
+th, td {
+  padding: 5px; /* Add padding to cells */
+  text-align: left; /* Align text to the left */
+  border: 1px solid #ddd; /* Add borders to cells */
+  margin: 4px;
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
+
+th {
+  background-color: #f2f2f2; /* Light background for headers */
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
+
+.itemCheckbox {
+  /* Style checkboxes (optional) */
+  filter: drop-shadow(0px 4px 4px rgb(96, 95, 95));
+}
